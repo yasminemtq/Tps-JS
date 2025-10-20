@@ -40,34 +40,34 @@ async function getPokemon(name) {
       moves: detailedMoves,
     };
   } catch (error) {
-    console.log("❌ Pokémon not found!");
+    console.log(" Pokémon not found!");
     return null;
   }
 }
 
-// 🎯 Fonction d’attaque
+//  Fonction d’attaque
 function attack(attacker, defender, move) {
   console.log(`\n${attacker.name} uses ${move.name.toUpperCase()}!`);
 
   const hitChance = Math.random() * 100;
   if (hitChance > move.accuracy) {
-    console.log(`❌ ${attacker.name}'s attack missed!`);
+    console.log(` ${attacker.name}'s attack missed!`);
     return 0;
   }
 
   const damage = Math.floor(move.power + Math.random() * 10);
-  console.log(`💥 It hits and deals ${damage} damage!`);
+  console.log(` It hits and deals ${damage} damage!`);
   return damage;
 }
 
-// 🚀 Boucle principale du jeu
+// Boucle principale du jeu
 async function startGame() {
   console.log("🎮 Welcome to the Pokémon Battle CLI!");
   const playerName = prompt("Choose your Pokémon: ");
   const player = await getPokemon(playerName);
 
   if (!player || player.moves.length < 1) {
-    console.log("⚠️ Could not load moves for this Pokémon. Try another one!");
+    console.log(" Could not load moves for this Pokémon. Try another one!");
     return;
   }
 
@@ -75,7 +75,7 @@ async function startGame() {
   const botName = botList[Math.floor(Math.random() * botList.length)];
   const bot = await getPokemon(botName);
 
-  console.log(`\n🤖 The bot chose ${bot.name}!\n`);
+  console.log(`\n The bot chose ${bot.name}!\n`);
 
   let playerHP = PLAYER_HP;
   let botHP = BOT_HP;
@@ -89,7 +89,7 @@ async function startGame() {
     const choice = parseInt(prompt("Choose your move (1-5): "));
     const playerMove = player.moves[choice - 1];
     if (!playerMove) {
-      console.log("❌ Invalid choice!");
+      console.log(" Invalid choice!");
       continue;
     }
 
@@ -103,18 +103,18 @@ async function startGame() {
     const dmgToPlayer = attack(bot, player, botMove);
     playerHP -= dmgToPlayer;
 
-    console.log(`\n❤️ Your HP: ${playerHP > 0 ? playerHP : 0}`);
-    console.log(`🩸 Bot HP: ${botHP > 0 ? botHP : 0}`);
+    console.log(`\n Your HP: ${playerHP > 0 ? playerHP : 0}`);
+    console.log(` Bot HP: ${botHP > 0 ? botHP : 0}`);
   }
 
   if (playerHP <= 0 && botHP <= 0) {
-    console.log("\n⚔️ It's a draw!");
+    console.log("\n It's a draw!");
   } else if (playerHP <= 0) {
-    console.log("\n💀 You lost! The bot wins!");
+    console.log("\n You lost! The bot wins!");
   } else {
-    console.log("\n🏆 You won! Congratulations!");
+    console.log("\n You won! Congratulations!");
   }
 }
 
-// 🕹️ Lancer le jeu
+//  Lancer le jeu
 startGame();
