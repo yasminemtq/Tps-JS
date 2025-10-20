@@ -7,7 +7,7 @@ const prompt = promptSync();
 const PLAYER_HP = 300;
 const BOT_HP = 300;
 
-// 🎮 Fonction pour obtenir les infos d’un Pokémon depuis l’API
+//  Fonction pour obtenir les infos d’un Pokémon depuis l’API
 async function getPokemon(name) {
   try {
     const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${name.toLowerCase()}`);
