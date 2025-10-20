@@ -62,7 +62,7 @@ function attack(attacker, defender, move) {
 
 // Boucle principale du jeu
 async function startGame() {
-  console.log("🎮 Welcome to the Pokémon Battle CLI!");
+  console.log(" Welcome to the Pokémon Battle CLI!");
   const playerName = prompt("Choose your Pokémon: ");
   const player = await getPokemon(playerName);
 
