@@ -1,2 +1,7 @@
 # Ignorer le dossier des dépendances Node.js
 node_modules/
+.env
+.DS_Store
+*.log
+.vscode/
+.idea/
