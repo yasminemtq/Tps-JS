@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Tp_Js_BooksApp</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="p-8 bg-gray-100">
+
+  <h1 class="text-3xl mb-6 font-bold">Book Tracker</h1>
+
+  <!-- FORM -->
+  <form id="bookForm" class="grid grid-cols-2 gap-4 bg-white p-6 shadow rounded">
+
+    <input required id="title" class="border p-2" placeholder="Title">
+    <input required id="author" class="border p-2" placeholder="Author">
+    <input required id="number_of_pages" type="number" class="border p-2" placeholder="Number of pages">
+    <input required id="pages_read" type="number" class="border p-2" placeholder="Pages read">
+    <input required id="price" type="number" class="border p-2" placeholder="Price">
+    <input id="suggested_by" class="border p-2" placeholder="Suggested by">
+
+    <select id="status" class="border p-2">
+      <option>Read</option>
+      <option>Re-read</option>
+      <option>DNF</option>
+      <option>Currently reading</option>
+      <option>Returned Unread</option>
+      <option>Want to read</option>
+    </select>
+
+    <select id="format" class="border p-2">
+      <option>Print</option>
+      <option>PDF</option>
+      <option>Ebook</option>
+      <option>Audiobook</option>
+    </select>
+
+    <button class="col-span-2 bg-blue-600 text-white p-2 rounded" type="submit">
+      Add Book
+    </button>
+
+  </form>
+
+  <hr class="my-8">
+
+  <!-- GLOBAL STATS -->
+  <div id="globalStats" class="text-xl mb-6 font-semibold"></div>
+
+  <!-- LIST -->
+  <ul id="bookList" class="space-y-4"></ul>
+
+  <script src="script.js"></script>
+</body>
+</html>
