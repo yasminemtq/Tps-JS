@@ -3,7 +3,7 @@
 <ul>
   @for (book of books; track book.name) {
     @if (book.year > 2020) {
-      <li>{{ book.name }} - {{ book.year }}</li>
+      <li>{{ book.name | bookName }} - {{ book.year }}</li>
     }
   }
 </ul>

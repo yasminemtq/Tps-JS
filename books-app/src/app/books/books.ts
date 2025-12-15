@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
+import { BookNamePipe } from '../book-name-pipe';
 
 @Component({
   selector: 'app-books',
   standalone: true,
-  templateUrl: './books.html'
+  templateUrl: './books.html',
+  imports: [BookNamePipe]
 })
 export class BooksComponent {
-
   books = [
-    { name: 'Angular Basics', year: 2019 },
-    { name: 'Advanced Angular', year: 2021 },
-    { name: 'Modern Web Development', year: 2023 }
+    { name: 'Heros', year: 2021 },
+    { name: 'Adventure', year: 2022 },
+    { name: 'Mystery', year: 2019 }
   ];
-
 }
